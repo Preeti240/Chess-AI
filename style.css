@@ -1,0 +1,350 @@
+/*MAIN CSS*/
+*{font-family:"Courier New";}
+body { background-color:#FFF;}
+h1 {text-align: center; font-size: 3em; color: #7889d6;}
+.card{
+  background-color:#FFF;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#sectioner{
+  display: grid;
+  grid-template-columns: 20px 30% auto 30% 20px;
+  grid-template-rows: 20px auto 20px;
+}
+#main-div{
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+#information-div{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+#information{
+  font-size:2em;
+  text-align:center;
+  color: 555;
+}
+#turn{
+  margin-bottom: 50px;
+}
+#author{
+    text-align: center;
+    color: #444;
+}
+
+#moreinfo-div{
+  display: block;
+  margin-left: 30px;
+  padding: 25px;
+  padding-top: 5px;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  z-index: 100;
+  font-size: 1.4em;
+  font-family: Open Sans;
+}
+
+#moreinfo-div h2{
+  color: #7889d6;
+}
+
+#moreinfo-div.hidden{
+  display: none;
+}
+
+#moreinfo-div li{
+  list-style-type: circle;
+}
+#mobile_w{
+  display: none;
+}
+
+
+/*TABLE CSS*/
+table#tablero  {
+  border: 2;
+  margin-left:auto;
+  margin-right:auto;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align:center;
+  font-size:3.2em;
+
+}
+#tablero td {
+    width: 12.5%;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+#tablero td:hover{
+  box-shadow: inset 0 0 2px 2px #bd9944;
+}
+#tablero td:active{
+  box-shadow: inset 0 0 100px 100px #d6a278;
+}
+#tablero tr:nth-child(2n) td:nth-child(2n+1) {
+  background: #d6ba78;
+}
+
+#tablero tr:nth-child(2n+1) td:nth-child(2n) {
+  background: #d6ba78;
+}
+
+#tablero tr:nth-child(2n+1) td:nth-child(2n+1) {
+  background: #ffffbf;
+}
+
+#tablero tr:nth-child(2n) td:nth-child(2n) {
+  background: #ffffbf;
+}
+
+#tablero tr:nth-child(2n+1) td:nth-child(2n+1):active{
+  box-shadow: inset 0 0 100px 100px #ffefbf;
+}
+
+#tablero tr:nth-child(2n) td:nth-child(2n):active{
+  box-shadow: inset 0 0 100px 100px #ffefbf;
+}
+#tablero td > div{
+  display: inline-grid;
+  grid-template-columns: 50px;
+  grid-template-rows: 50px;
+}
+#tablero td > div > img{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  -webkit-filter: drop-shadow(2px 2px 1px black) drop-shadow(-2px -2px 1px black)  ;
+    filter:drop-shadow(2px 0px 0px white) drop-shadow(-2px -0px 0px white)
+          drop-shadow(0px 2px 0px white) drop-shadow(-0px -2px 0px white)
+      drop-shadow(2px 2px 1px #666) drop-shadow(-2px -2px 1px #666);
+
+}
+#tablero td.selected{
+  box-shadow: inset 0 0 100px 100px rgba(244,226,68,0.6);
+}
+#tablero td > div > div{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+	border-radius: 50%;
+  z-index: 505;
+	height:50px;
+	width:50px;
+  top: 90px;
+  background-color:rgba(0,0,0,0.4);
+}
+
+/*RESTART BUTTONS SYLE*/
+.restart{
+  padding:3%;
+  padding-left: 3%;
+  margin: auto;
+  margin-top: 25px;
+  width:55%;
+  font-size: .7em;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+
+}
+
+#moreinfo-button{
+  padding:1%;
+  padding-left: 2%;
+  width:57%;
+}
+
+.restart > img{
+  vertical-align:middle;
+  margin-right: 15px;
+}
+
+.restart:hover{
+  background-color: #bfbfff;
+}
+.restart:active{
+  background-color: #7889d6;
+}
+
+
+/*MOVEMENTS SECTION*/
+#movements-div{
+  padding: 20px;
+  padding-left: 50px;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+#move_title{
+  font-size:1.3em;
+  color: 555;
+}
+
+#moves > table{
+  width: 95%;
+
+}
+
+#moves{
+  height: 700px;
+  overflow: auto;
+}
+
+/*Difficulty selector*/
+#difficulty_div{
+  margin-top: 40px;
+  font-size: .6em;
+  display: block;
+}
+
+#difficulty_div.hidden{
+  display: none;
+}
+
+.slider {
+ -webkit-appearance: none;
+ width: auto;
+ height: 15px;
+ border-radius: 5px;
+ background: #d3d3d3;
+ outline: none;
+ opacity: 0.7;
+ -webkit-transition: .2s;
+ transition: opacity .2s;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #7889d6;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #7889d6;
+  cursor: pointer;
+}
+
+
+*.unselectable {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+@media (orientation: portrait) {
+  #sectioner{
+    display: grid;
+    grid-template-columns: 15px auto 15px;
+    grid-template-rows: 50% 50%;
+  }
+  #tablero td > div > img{
+    width: 25px;
+    margin: 0px;
+    padding: 0px;
+  }
+  #tablero td > div{
+    display: inline-grid;
+    grid-template-columns: 20px;
+    grid-template-rows: 20px;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+
+  }
+  #tablero td {
+      width: 6.5%;
+      height: 10px;
+      overflow: hidden;
+      padding: 0px;
+      margin: 0px;
+  }
+  #tablero td > div > div{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  	border-radius: 50%;
+    z-index: 505;
+  	height:20px;
+  	width:20px;
+    background-color:rgba(0,0,0,0.4);
+    margin: 0px;
+    padding: 0px;
+
+  }
+  table#tablero  {
+    font-size: 3.3em;
+  }
+  #subinfo-div{
+    display: none;
+  }
+  #information{
+    font-size: 1.5em;
+  }
+  #turn{
+    margin-bottom: 0px;
+    display: none;
+  }
+
+  .restart{
+    padding:3%;
+    padding-left:12%;
+    margin: auto;
+    margin-top: 10px;
+    width:80%;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+
+  }
+
+  #moreinfo-button{
+    display: none;
+  }
+
+  .restart > img{
+    vertical-align:middle;
+    margin-right: 15px;
+    width: 50px;
+  }
+  #movements-div{
+    display: none;
+  }
+  #mobile_w{
+    display: block;
+    font-size: 0.6em;
+  }
+  #main-div{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  #information-div{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  #difficulty_div{
+    width: auto;
+    font-size: 1em;
+  }
+  #difficulty_div input{
+    width: 55%;
+  }
+}

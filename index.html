@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chess Life</title>
+    <link rel="icon" href="./icons/logo.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="./style.css">
+  
+    <script type="text/javascript" src="./js/chess.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/evMatrix.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/behaviour.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="sectioner">
+      <div id="information-div">
+        <div id="subinfo-div">
+          <h1>Chess Life</h1>
+          <h2 id="author"><b>Created by TY-52</h2></b>
+	  
+          <br/><br/>
+        </div>
+
+        <span id="information">
+        <p id="turn">Current turn: White</p>
+        <p id="mobile_w">This is a pc intended experience</p>
+        <div class="card restart unselectable" id="restart-pc" onclick="restart(false)">
+        <img src="./icons/robot.png" width="45px" >
+        <span>Restart, AI start</span>
+      </div>
+      <div class="card restart unselectable" id="restart-you" onclick="restart(true)">
+        <img src="./icons/avatar.png" width="45px">
+        <span>Restart, You start</span>
+      </div>
+      <div class="card restart unselectable" id="restart-you" onclick="restart_local()">
+        <img src="./icons/local.png" width="45px">
+        <span>Local Multiplayer</span>
+      </div>
+      <div class="card restart unselectable" id="moreinfo-button" onclick="toggle_info()">
+        <img src="./icons/info.png" width="20px">
+        <span>Show/Hide information</span>
+      </div>
+      <div id="difficulty_div">
+        <label >Difficulty</label>
+        <input class="slider" type="range" id="difficulty_s" name="volume" min="0" max="6" value="1">
+        <label id="dif_label">0</label>
+      </div>
+
+
+      </span>
+      </div>
+      <div class="card" id="main-div">
+        <table id="tablero" class="unselectable" >
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+        </table>
+      </div>
+      <div id="movements-div">
+        <p id="move_title">Moves:</p>
+        <div id="moves">
+          <table >
+            <tbody id="moveTable">
+              <tr>
+                <td width="10%">No.</td>
+                <td width="25%">Piece</td>
+                <td width="32.5%">From</td>
+                <td width="32.5%">To</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card hidden" id="moreinfo-div">
+        <h2>About Chess AI</h2>
+        <p>It is created by Preeti (A 3rd year Computer student) and uses <a target="_blank" href="https://github.com/Preeti240/">chess.js</a> to control the state of the board.
+        </p>
+        <p>The difficulty levels are:</p>
+        <ul>
+          <li>0:
+            <p>The algorithm chooses a random move.</p>
+          </li>
+          <li>odd numbers:
+            <p>The algorithm chooses the best move according to the value of the pieces remaining in the n following turns.</p>
+          </li>
+          <li>pair numbers:
+            <p>The algorithm chooses the best move according to the value of the pieces remaining and their positions in the n following turns.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
